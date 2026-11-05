@@ -1,0 +1,681 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>分子对接学院｜代码精灵学院</title>
+
+<style>
+:root {
+    --ink:#182b49;
+    --muted:#63728a;
+    --line:#e4eaf2;
+    --blue:#245db1;
+}
+
+* {box-sizing:border-box}
+
+body {
+    margin:0;
+    background:#f7f9fc;
+    color:var(--ink);
+    font-family:Inter,"Microsoft YaHei",system-ui,sans-serif;
+    line-height:1.7;
+}
+
+a {color:#245db1;text-decoration:none}
+a:hover {text-decoration:underline}
+
+.wrap {
+    max-width:1120px;
+    margin:auto;
+    padding:0 22px;
+}
+
+.hero {
+    padding:65px 0;
+    background:linear-gradient(120deg,#dff1ff,#e9e5ff 60%,#e1f7e9);
+}
+
+.hero h1 {
+    font-size:clamp(2.2rem,5vw,3.5rem);
+    line-height:1.2;
+    margin:10px 0;
+}
+
+.hero p {
+    color:#405574;
+    max-width:700px;
+    font-size:1.08rem;
+}
+
+.nav {
+    padding:15px 0;
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.pill {
+    background:white;
+    border:1px solid var(--line);
+    padding:7px 14px;
+    border-radius:30px;
+}
+
+.section {padding:35px 0}
+
+.section h2 {
+    font-size:1.7rem;
+    margin-bottom:8px;
+}
+
+.muted {color:var(--muted)}
+
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:18px;
+}
+
+.card {
+    background:white;
+    padding:22px;
+    border:1px solid var(--line);
+    border-radius:20px;
+    box-shadow:0 5px 20px #233b5b0a;
+}
+
+.card h3 {margin-top:0}
+
+.button {
+    display:inline-block;
+    padding:11px 17px;
+    background:#245db1;
+    color:white;
+    border-radius:11px;
+    font-weight:700;
+    margin-top:8px;
+}
+
+.button:hover {
+    background:#174989;
+    color:white;
+    text-decoration:none;
+}
+
+.soft {
+    background:#eaf4ff;
+    border-radius:16px;
+    padding:18px;
+}
+
+.video-box {
+    width:100%;
+    aspect-ratio:16/9;
+    border:0;
+    border-radius:15px;
+    background:#e9eef5;
+}
+
+.code-card {
+    margin:15px 0;
+    border:1px solid var(--line);
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+}
+
+.code-head {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    padding:12px 16px;
+    background:#edf4fc;
+    font-weight:700;
+}
+
+.code-content {
+    position:relative;
+    background:#142238;
+    color:#e8f1ff;
+    padding:20px;
+    overflow:auto;
+}
+
+pre {
+    margin:0;
+    white-space:pre-wrap;
+    word-break:break-word;
+    font-family:Consolas,monospace;
+}
+
+.copy-btn {
+    background:#fff;
+    color:#183b72;
+    border:0;
+    border-radius:8px;
+    padding:7px 12px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+.copy-btn:hover {background:#dcecff}
+
+.gallery {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
+}
+
+.gallery img {
+    width:100%;
+    border-radius:15px;
+    border:1px solid var(--line);
+    display:block;
+}
+
+footer {
+    padding:30px 0;
+    border-top:1px solid var(--line);
+    color:var(--muted);
+}
+
+@media(max-width:600px) {
+    .wrap {padding:0 16px}
+    .hero {padding:40px 0}
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+<div class="wrap">
+
+<div style="font-weight:800;color:#3566a7;letter-spacing:2px">
+MOLECULAR DOCKING · LEARNING CENTER
+</div>
+
+<h1>🧬 分子对接学院</h1>
+
+<p>
+从蛋白质结构准备到小分子对接，
+从 Schrödinger 软件操作到 PyMOL 结果可视化，
+逐步掌握分子对接的科研分析流程。
+</p>
+
+<a class="button" href="#tutorial">开始学习 ↓</a>
+
+</div>
+</header>
+
+<nav class="wrap nav">
+<a class="pill" href="../index.html">🏠 返回学院首页</a>
+<a class="pill" href="#tutorial">📘 教程资料</a>
+<a class="pill" href="#video">🎬 视频教程</a>
+<a class="pill" href="#code">💻 常用代码</a>
+<a class="pill" href="#gallery">🖼️ 科研图片</a>
+</nav>
+
+<main class="wrap">
+
+<!-- PDF教程 -->
+
+<section class="section" id="tutorial">
+
+<h2>📘 一、分子对接教程资料</h2>
+
+<p class="muted">
+Schrödinger 软件分子对接学习资料，建议配合视频教程一起使用。
+</p>
+
+<div class="card">
+
+<h3>📕 分子对接——薛定谔</h3>
+
+<p>
+PDF 教程：包含分子对接相关的软件操作和学习内容。
+</p>
+
+<div class="soft">
+<b>推荐学习顺序：</b>
+<p>1. 熟悉 Maestro 软件界面</p>
+<p>2. 蛋白质结构准备（Protein Preparation）</p>
+<p>3. 配体准备（LigPrep）</p>
+<p>4. 结合口袋与 Grid 生成</p>
+<p>5. Glide 分子对接</p>
+<p>6. 对接结果分析</p>
+</div>
+
+<a class="button"
+href="../downloads/分子对接-薛定谔.pdf"
+download>
+下载 PDF 教程 ↓
+</a>
+
+<a class="button"
+href="../downloads/分子对接-薛定谔.pdf"
+target="_blank">
+在线阅读 PDF ↗
+</a>
+
+</div>
+
+</section>
+
+<!-- 视频教程 -->
+
+<section class="section" id="video">
+
+
+<!-- 视频教程 -->
+
+<section class="section" id="video">
+
+<h2>🎬 二、视频教学中心</h2>
+
+<p class="muted">
+通过视频学习分子对接软件操作，结合课程图片和 PDF 教程进行系统学习。
+</p>
+
+<!-- 视频一：薛定谔教学 -->
+
+<div class="card" style="margin-bottom:25px">
+
+<h3>📺 课程一：Schrödinger（薛定谔）分子对接教学</h3>
+
+<p class="muted">
+学习薛定谔软件的基本操作及分子对接流程。
+</p>
+
+<div style="position:relative;width:100%;padding-top:56.25%;overflow:hidden;border-radius:15px">
+
+<iframe
+src="https://player.bilibili.com/player.html?bvid=BV1654y1W7vW&page=1&high_quality=1"
+style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
+allowfullscreen="true"
+scrolling="no">
+</iframe>
+
+</div>
+
+<p>
+如果视频无法在网页内播放，可以通过下面的链接进入 B 站观看。
+</p>
+
+<a class="button"
+href="https://www.bilibili.com/video/BV1654y1W7vW/"
+target="_blank"
+rel="noopener noreferrer">
+前往 Bilibili 观看 ↗
+</a>
+
+<!-- 课程图片 -->
+
+<div style="margin-top:28px">
+
+<h3>📚 薛定谔课程学习内容</h3>
+
+<p class="muted">
+以下图片展示本课程需要学习的具体内容和课程安排。
+</p>
+
+<img
+src="../assets/course.png"
+alt="Schrödinger 分子对接课程内容"
+style="width:100%;height:auto;border-radius:15px;border:1px solid #e4eaf2;display:block">
+
+</div>
+
+</div>
+
+
+<!-- 视频二：第二套教学 -->
+
+<div class="card">
+
+<h3>📺 课程二：分子对接视频进阶教学</h3>
+
+<p class="muted">
+分子对接后用Pymol进行可视化，作为补充学习资料。
+</p>
+
+<div style="position:relative;width:100%;padding-top:56.25%;overflow:hidden;border-radius:15px">
+
+<iframe
+src="https://player.bilibili.com/player.html?bvid=BV1E396B1Eph&page=1&high_quality=1"
+style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
+allowfullscreen="true"
+scrolling="no">
+</iframe>
+
+</div>
+
+<p>
+如果视频无法在网页内播放，可以通过下面的链接进入 B 站观看。
+</p>
+
+<a class="button"
+href="https://www.bilibili.com/video/BV1E396B1Eph/"
+target="_blank"
+rel="noopener noreferrer">
+前往 Bilibili 观看 ↗
+</a>
+
+<!-- PyMOL 可视化图片展示 -->
+
+<div style="margin-top:28px">
+
+
+<!-- PyMOL 可视化图片展示 -->
+
+<div style="margin-top:28px">
+
+<h3>🧬 PyMOL 分子可视化过程展示</h3>
+
+<p class="muted">
+分子对接完成后，使用 PyMOL 对蛋白质结构、配体结合口袋及关键氨基酸残基进行可视化分析。
+</p>
+
+<!-- 图片1 -->
+
+<div style="margin-top:22px">
+<img
+src="../assets/pymol1.png"
+alt="1"
+style="width:100%;height:auto;border-radius:14px;border:1px solid #e4eaf2;display:block">
+
+<p style="text-align:center;color:#63728a">1</p>
+</div>
+
+<!-- 图片2 -->
+
+<div style="margin-top:22px">
+<img
+src="../assets/pymol2.png"
+alt="2"
+style="width:100%;height:auto;border-radius:14px;border:1px solid #e4eaf2;display:block">
+
+<p style="text-align:center;color:#63728a">2</p>
+</div>
+
+<!-- 图片3 -->
+
+<div style="margin-top:22px">
+<img
+src="../assets/pymol3.png"
+alt="3"
+style="width:100%;height:auto;border-radius:14px;border:1px solid #e4eaf2;display:block">
+
+<p style="text-align:center;color:#63728a">3</p>
+</div>
+
+</div>
+
+</div>
+
+
+</section>
+
+
+<!-- 常用代码 -->
+
+<section class="section" id="code">
+
+<h2>💻 三、分子对接常用代码库</h2>
+
+<p class="muted">
+整理科研中经常使用的 PyMOL 命令，点击复制即可使用。
+</p>
+
+<h3>1. 关键氨基酸残基选择</h3>
+
+<div class="code-card">
+
+<div class="code-head">
+<span>选择指定残基</span>
+<button class="copy-btn" onclick="copyCode(this)">复制代码</button>
+</div>
+
+<div class="code-content">
+<pre>select key_res, resi 359+379+547</pre>
+</div>
+
+</div>
+
+<div class="code-card">
+
+<div class="code-head">
+<span>选择指定链中的残基</span>
+<button class="copy-btn" onclick="copyCode(this)">复制代码</button>
+</div>
+
+<div class="code-content">
+<pre>select key_res, chain A and resi 359+379+547</pre>
+</div>
+
+</div>
+
+<h3>2. 蛋白质结构显示</h3>
+
+<div class="code-card">
+
+<div class="code-head">
+<span>显示蛋白质卡通结构</span>
+<button class="copy-btn" onclick="copyCode(this)">复制代码</button>
+</div>
+
+<div class="code-content">
+<pre>show cartoon
+color cyan, polymer.protein</pre>
+</div>
+
+</div>
+
+<div class="code-card">
+
+<div class="code-head">
+<span>显示配体棒状结构</span>
+<button class="copy-btn" onclick="copyCode(this)">复制代码</button>
+</div>
+
+<div class="code-content">
+<pre>show sticks, organic
+color yellow, organic</pre>
+</div>
+
+</div>
+
+
+<h3>3. 配体与关键残基颜色设置</h3>
+
+<div class="code-card">
+
+<div class="code-head">
+<span>配体与关键残基颜色设置</span>
+<button class="copy-btn" onclick="copyCode(this)">复制代码</button>
+</div>
+
+<div class="code-content">
+<pre># 配体设置为绿色
+util.cbag lig
+
+# 配体设置为黄色（可选）
+# util.cbay lig
+
+# 关键氨基酸残基设置为蓝色
+util.cbac key_res</pre>
+</div>
+
+
+<h3>4. 氢键与距离分析</h3>
+
+<div class="code-card">
+
+<div class="code-head">
+<span>不显示非极性氢键</span>
+<button class="copy-btn" onclick="copyCode(this)">复制代码</button>
+</div>
+
+<div class="code-content">
+<pre>remove (elem H and neighbor elem C)</pre>
+</div>
+
+<div class="code-head">
+<span>显示配体附近的极性相互作用</span>
+<button class="copy-btn" onclick="copyCode(this)">复制代码</button>
+</div>
+
+<div class="code-content">
+<pre>dist hbonds, organic, polymer.protein, mode=2
+hide labels, hbonds</pre>
+</div>
+
+</div>
+
+<div class="code-card">
+
+<div class="code-head">
+<span>显示配体周围 5 Å 的残基</span>
+<button class="copy-btn" onclick="copyCode(this)">复制代码</button>
+</div>
+
+<div class="code-content">
+<pre>select nearby_res, byres (polymer.protein within 5 of organic)
+show sticks, nearby_res</pre>
+</div>
+
+<div class="code-card">
+
+<div class="code-head">
+<span>更改连接键的显示宽度</span>
+<button class="copy-btn" onclick="copyCode(this)">复制代码</button>
+</div>
+
+<div class="code-content">
+<pre>set dash_radius, 0.1</pre>
+</div>
+
+<div class="code-head">
+<span>ChimeraX常用（新手不用）</span>
+<button class="copy-btn" onclick="copyCode(this)">复制代码</button>
+</div>
+
+<div class="code-content">
+<pre># 1. 设置白色背景
+set bg white
+
+# 2. 开启黑色轮廓线 (核心命令！)
+graphics silhouettes true width 1.5
+
+# 3. 设置柔和光照 (去除强烈阴影，使画面更扁平化)
+lighting soft
+</pre>
+</div>
+
+
+</div>
+
+<div class="soft">
+<b>注意：</b>
+以上代码为 PyMOL 命令，不是 Schrödinger Maestro 命令。
+不同蛋白质结构的链编号、残基编号和配体选择名称可能不同，使用前需要核对结构文件。
+</div>
+
+</section>
+
+<!-- 图片展示 -->
+
+<section class="section" id="gallery">
+
+<h2>🖼️ 四、分子对接科研图片</h2>
+
+<p class="muted">
+用于展示蛋白质结构、配体结合口袋、关键氨基酸及分子相互作用。
+</p>
+
+<div class="gallery">
+
+<div class="card">
+<img src="../assets/molecular-docking.png"
+alt="分子对接科研图片">
+<h3>蛋白质与配体结合</h3>
+<p class="muted">展示配体在蛋白质结合口袋中的位置。</p>
+</div>
+
+<div class="card">
+<img src="../assets/docking-banner.png"
+alt="分子相互作用图片">
+<h3>分子相互作用</h3>
+<p class="muted">展示氢键及关键氨基酸残基。</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- 后续扩展 -->
+
+<section class="section">
+
+<h2>🚀 五、后续学习内容</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>🔬 对接结果分析</h3>
+<p>结合能、关键氨基酸、氢键及疏水相互作用。</p>
+</div>
+
+<div class="card">
+<h3>⚗️ 分子动力学模拟</h3>
+<p>后续拓展 RMSD、RMSF、氢键和结合稳定性分析。</p>
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+<div class="wrap">
+代码精灵学院 · 分子对接学习中心
+<br>
+Schrödinger · PyMOL · Molecular Docking
+</div>
+</footer>
+
+<script>
+function copyCode(button) {
+    const code = button.parentElement.nextElementSibling.querySelector("pre").innerText;
+
+    navigator.clipboard.writeText(code).then(() => {
+        button.textContent = "已复制 ✓";
+
+        setTimeout(() => {
+            button.textContent = "复制代码";
+        }, 1600);
+
+    }).catch(() => {
+        const textarea = document.createElement("textarea");
+        textarea.value = code;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        textarea.remove();
+
+        button.textContent = "已复制 ✓";
+
+        setTimeout(() => {
+            button.textContent = "复制代码";
+        }, 1600);
+    });
+}
+</script>
+
+</body>
+</html>
